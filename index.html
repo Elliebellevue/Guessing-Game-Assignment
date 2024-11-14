@@ -10,9 +10,16 @@
 
 <body>
    <script>
-        let inputNumber = prompt("Guess a number between 1 and 10:");
-        while (!Number.isInteger(Number.parseInt(inputNumber))) {
-            inputNumber = prompt("The input is not a number. Please Guess a number between 1 and 10 again");
+        let inputNumber;
+
+        while (true) {
+            inputNumber = prompt("Guess a number between 1 and 10:");
+            value = parseInt(inputNumber);
+            if (value <= 0 || value > 10) {
+                alert("Invalid input. Try again.");
+            } else {
+                break;
+            }
         }
 
         let theNumber = Math.floor(Math.random() * 10) + 1;
