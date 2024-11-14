@@ -14,8 +14,8 @@
 
         while (true) {
             inputNumber = prompt("Guess a number between 1 and 10:");
-            inputNumber = parseInt(inputNumber);
-            if (inputNumber <= 0 || inputNumber > 10) {
+            inputNumber = parseInt(inputNumber) || -1;
+            if (inputNumber < 1 || inputNumber > 10) {
                 alert("Invalid input. Try again.");
             } else {
                 break;
